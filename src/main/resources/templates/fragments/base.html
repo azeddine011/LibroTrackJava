@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:fragment="title" th:text="${pageTitle} + ' | LibroTrack'">LibroTrack</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/src/main.js}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <div th:include="fragments/navbar :: navbar"></div>
+    <div th:include="fragments/sidebar :: sidebar"></div>
+
+    <!-- Main Content -->
+    <div class="p-4 sm:ml-64">
+        <div class="p-4 mt-14">
+            <th:block th:fragment="content" />
+        </div>
+    </div>
+</body>
+</html>
